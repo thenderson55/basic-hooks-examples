@@ -3,7 +3,7 @@ import React from 'react'
 function HookCounter({ name }) {
   const initialCount = 0
   const [count, setCount] = React.useState(initialCount)
-  const [names, setNames] = React.useState({firtName: "", lastName: ""})
+  const [names, setNames] = React.useState({firstName: "", lastName: ""})
 
   function incrementFive(){
     for(let i = 0; i < 5; i++){
@@ -13,7 +13,7 @@ function HookCounter({ name }) {
 
   return (
     <div data-test="hook-component">
-      <div data-test="greeting">Yolo {name}!</div>
+      <div data-testid="greeting">Yolo {name}!</div>
       <div data-test="counter-display">Count: {count}</div> 
       <button data-test="reset-button" onClick={() => setCount(initialCount)}>Resest</button>
       <button data-test="increment-button" onClick={() => setCount(prevCount => prevCount + 1)}>Increase</button>
@@ -21,9 +21,9 @@ function HookCounter({ name }) {
       <button onClick={incrementFive}>Put Five ooon it!</button>
 
       <form action="">
-        <input type="text" value={names.firtName} onChange={(e) => setNames({...name, firstName: e.target.value})}/>
+        <input data-testid="firstName-input" type="text" value={names.firstName} onChange={(e) => setNames({...name, firstName: e.target.value})}/>
         <input type="text" value={names.lastame} onChange={(e) => setNames({...names, lastName: e.target.value})}/>
-        <h3>Your first name is: {names.firstName}</h3>
+        <h3 data-testid="firstName-output">Your first name is: {names.firstName}</h3>
         <h3>Your last name is: {names.lastName}</h3>
       </form>
     </div>

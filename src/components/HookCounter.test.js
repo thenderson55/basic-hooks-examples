@@ -28,13 +28,39 @@ it("number increases by five when button is clikcked", () => {
 });
 
 it("check props are being passed down", () => {
-  const { getByText } = render(
+  const { getByTestId } = render(
     <App>
       <HookCounter />
     </App>
   );
+  // data-testid="todos-ul"
+  const greeting = getByTestId("greeting");
 
-  expect(getByText(/Yol/i).textContent).toBe("Yolo bobby!");
+  expect(greeting.textContent).toBe("Yolo bobby!");
+});
+
+it("allows input", () => {
+  const { getByTestId } = render(<HookCounter />);
+
+  const inputEl = getByTestId("firstName-input")
+  const newValue = "Freddy"
+
+  fireEvent.change(inputEl, { target: { value: newValue }})
+  expect(inputEl.value).toBe(newValue)
+
+});
+
+it("updates the state when input happens", () => {
+  const { getByTestId } = render(<HookCounter />);
+
+  const inputEl = getByTestId("firstName-input")
+  const outputEl = getByTestId("firstName-output")
+  const newValue = "Freddy"
+
+  fireEvent.change(inputEl, { target: { value: newValue }})
+  expect(inputEl.value).toBe(newValue)
+  expect(outputEl.textContent).toBe(`Your first name is: ${newValue}`)
+
 });
 
 // import React from 'react';
