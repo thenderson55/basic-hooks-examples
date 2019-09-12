@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { render, fireEvent, cleanup } from "@testing-library/react";
 
 import HookCounter from "./HookCounter";
-import App from "../App";
+import App from "../../App";
 
 afterEach(cleanup);
 

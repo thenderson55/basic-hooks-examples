@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from '../../App'
+import { CountContext } from '../../App'
 
 function HookCounter({ name }) {
+  const { user, age } = useContext(UserContext)
+  const { countState, countDispatch } = useContext(CountContext)
   const initialCount = 0
   const [count, setCount] = React.useState(initialCount)
   const [names, setNames] = React.useState({firstName: "", lastName: ""})
@@ -13,7 +17,13 @@ function HookCounter({ name }) {
 
   return (
     <div data-test="hook-component">
+
+      <button onClick={() => countDispatch('inc')}>XXX</button>
+
       <div data-testid="greeting">Yolo {name}!</div>
+
+      <div >Context {user}, {age}!</div>
+      
       <div data-test="counter-display">Count: {count}</div> 
       <button data-test="reset-button" onClick={() => setCount(initialCount)}>Resest</button>
       <button data-test="increment-button" onClick={() => setCount(prevCount => prevCount + 1)}>Increase</button>
