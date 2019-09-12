@@ -14,7 +14,7 @@ import UseReducerThree from './components/useReducer/UseReducerThree'
 
 import ParentComponent from './components/useCallback/ParentComponent'
 
-import Counter from './components/useMemo/Counter'
+// import Counter from './components/useMemo/Counter'
 
 import InputFocus from './components/useRef/FocusInput'
 import HookTimer from './components/useRef/HookTimer'
@@ -22,6 +22,11 @@ import HookTimer from './components/useRef/HookTimer'
 import DocTitleOne from './components/customHooks/DocTitleOne'
 import CustomCounter from './components/customHooks/CustomCounter'
 import UserForm from './components/customHooks/UserForm'
+
+// import Counter from './components/useState/Counter'
+import SimpleCounter from './components/useState/SimpleCounter'
+import Try from './components/useRef/Try'
+
 
 export const UserContext = React.createContext()
 export const CountContext = React.createContext()
@@ -52,19 +57,19 @@ function App() {
       <CountContext.Provider value={{ countState: count, countDispatch: dispatch}}>
         <div className="App" data-test="app-component">
           <h1>{count}</h1>
-          <HookCounter name="bobby"></HookCounter>
+          {/* <HookCounter name="bobby"></HookCounter>
           <HookCounterOne></HookCounterOne>
-          <UseReducerThree/>
+          <UseReducerThree/> */}
           {/* <MouseContainer></MouseContainer> */}
           {/* <IntervalClasCounter/> */}
           {/* <DataFetchingTwo/> */}
           {/* <ParentComponent/> */}
-          <Counter/>
-          <InputFocus/>
-          <HookTimer/>
+          <SimpleCounter/>
+          {/* <InputFocus/> */}
+          {/* <HookTimer/>
           <DocTitleOne/>
           <CustomCounter/>
-          <UserForm/>
+          <UserForm/> */}
         </div>
       </CountContext.Provider>
     </UserContext.Provider>
