@@ -20,6 +20,8 @@ import InputFocus from './components/useRef/FocusInput'
 import HookTimer from './components/useRef/HookTimer'
 
 import DocTitleOne from './components/customHooks/DocTitleOne'
+import CustomCounter from './components/customHooks/CustomCounter'
+import UserForm from './components/customHooks/UserForm'
 
 export const UserContext = React.createContext()
 export const CountContext = React.createContext()
@@ -61,6 +63,8 @@ function App() {
           <InputFocus/>
           <HookTimer/>
           <DocTitleOne/>
+          <CustomCounter/>
+          <UserForm/>
         </div>
       </CountContext.Provider>
     </UserContext.Provider>
