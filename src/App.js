@@ -18,6 +18,7 @@ import ParentComponent from './components/useCallback/ParentComponent'
 
 import InputFocus from './components/useRef/FocusInput'
 import HookTimer from './components/useRef/HookTimer'
+import Vanilla from './components/useRef/Vanilla'
 
 import DocTitleOne from './components/customHooks/DocTitleOne'
 import CustomCounter from './components/customHooks/CustomCounter'
@@ -25,7 +26,6 @@ import UserForm from './components/customHooks/UserForm'
 
 // import Counter from './components/useState/Counter'
 import SimpleCounter from './components/useState/SimpleCounter'
-import Try from './components/useRef/Try'
 
 
 export const UserContext = React.createContext()
@@ -65,6 +65,7 @@ function App() {
           {/* <DataFetchingTwo/> */}
           {/* <ParentComponent/> */}
           <SimpleCounter/>
+          <Vanilla/>
           {/* <InputFocus/> */}
           {/* <HookTimer/>
           <DocTitleOne/>
